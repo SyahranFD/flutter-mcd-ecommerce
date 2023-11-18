@@ -23,13 +23,12 @@ class HistoryPageView extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-              padding: EdgeInsets.all(12),
+              padding: EdgeInsets.symmetric(horizontal: 28, vertical: 20),
               decoration: BoxDecoration(
                 color: whiteColor,
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.2),
+                    color: blackColor.withOpacity(0.2),
                     blurRadius: 5,
                     offset: Offset(0, 2),
                   ),
@@ -56,7 +55,7 @@ class HistoryPageView extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
+                              Text( 
                                 "06 Oct 2023",
                                 style: TextStyle(
                                     color: greyColor, fontSize: width * 0.03),
