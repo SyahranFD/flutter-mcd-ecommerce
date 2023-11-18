@@ -9,7 +9,7 @@ class HistoryPage1 extends StatelessWidget {
     final double width = mediaQuery.width;
 
     return SizedBox(
-      height: 50,
+      height: mediaQuery.height * 0.1,
       child: Container(
         decoration: BoxDecoration(
           color: whiteColor,
@@ -21,7 +21,7 @@ class HistoryPage1 extends StatelessWidget {
             ),
           ],
         ),
-        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        padding: EdgeInsets.symmetric(horizontal: 16, vertical: mediaQuery.height * 0.02),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

@@ -163,3 +163,10 @@ TextStyle ts10MediumGrey = GoogleFonts.poppins(
       fontSize: 10,
     )
 );
+TextStyle ts10Primary = GoogleFonts.poppins(
+    textStyle: const TextStyle(
+      color: primaryColor,
+      fontWeight: FontWeight.w500,
+      fontSize: 10,
+    )
+);

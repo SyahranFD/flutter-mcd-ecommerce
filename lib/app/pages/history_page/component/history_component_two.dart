@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mcd_ecommerce/common/helper/themes.dart';
 
 class HistoryPage2 extends StatefulWidget {
   @override
@@ -6,7 +7,7 @@ class HistoryPage2 extends StatefulWidget {
 }
 
 class _HistoryPage2State extends State<HistoryPage2> {
-  int selectedStar = 0; // To track the selected star
+  int selectedStar = 0; 
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class _HistoryPage2State extends State<HistoryPage2> {
       margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       padding: EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: whiteColor,
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.2),
@@ -36,10 +37,10 @@ class _HistoryPage2State extends State<HistoryPage2> {
                 height: width * 0.1,
                 margin: EdgeInsets.only(right: 12),
                 decoration: BoxDecoration(
-                  color: Colors.yellow,
+                  color: primaryColor,
                   shape: BoxShape.circle,
                 ),
-                child: Icon(Icons.shopping_bag, color: Colors.white),
+                child: Icon(Icons.shopping_bag, color: whiteColor),
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,9 +50,9 @@ class _HistoryPage2State extends State<HistoryPage2> {
                     children: [
                       Text(
                         "06 Oct 2023",
-                        style: TextStyle(color: Colors.grey, fontSize: width * 0.03),
+                        style: TextStyle(color: greyColor, fontSize: width * 0.03),
                       ),
-                      SizedBox(width: width * 0.55),
+                      SizedBox(width: width * 0.05),
                       Text(
                         "Completed",
                         style: TextStyle(color: Colors.green, fontSize: width * 0.03),
@@ -62,7 +63,7 @@ class _HistoryPage2State extends State<HistoryPage2> {
                   Text(
                     "Mcdonald’s Kaliurang, Yogyakarta",
                     style: TextStyle(
-                      color: Colors.black,
+                      color: blackColor,
                       fontSize: width * 0.04,
                       fontWeight: FontWeight.bold,
                     ),
@@ -70,7 +71,7 @@ class _HistoryPage2State extends State<HistoryPage2> {
                   SizedBox(height: width * 0.01),
                   Text(
                     "1 PaNas Spesial, 2 Chicken Muffin",
-                    style: TextStyle(color: Colors.black, fontSize: width * 0.03),
+                    style: TextStyle(color: blackColor, fontSize: width * 0.03),
                   ),
                 ],
               ),
@@ -80,7 +81,7 @@ class _HistoryPage2State extends State<HistoryPage2> {
           Container(
             width: double.infinity,
             height: 1,
-            color: Colors.grey,
+            color: greyColor,
           ),
           SizedBox(height: width * 0.02),
           Row(
@@ -93,22 +94,22 @@ class _HistoryPage2State extends State<HistoryPage2> {
                       Text(
                         "32.000",
                         style: TextStyle(
-                          color: Colors.black,
+                          color: blackColor,
                           fontSize: width * 0.04,
                         ),
                       ),
                       SizedBox(width: width * 0.01),
                       Container(
                         width: width * 0.2,
-                        height: width * 0.07,
+                        height: width * 0.06,
                         decoration: BoxDecoration(
-                          color: Colors.red,
+                          color: secondaryColor,
                           borderRadius: BorderRadius.circular(width * 0.04),
                         ),
                         child: Center(
                           child: Text(
                             "Saved 22K",
-                            style: TextStyle(color: Colors.yellow, fontSize: width * 0.02),
+                            style: TextStyle(color: primaryColor, fontSize: width * 0.03),
                           ),
                         ),
                       ),
@@ -118,7 +119,7 @@ class _HistoryPage2State extends State<HistoryPage2> {
               ),
               Text(
                 "3 items",
-                style: TextStyle(color: Colors.grey, fontSize: width * 0.03),
+                style: TextStyle(color: greyColor, fontSize: width * 0.03),
               ),
             ],
           ),
@@ -127,8 +128,8 @@ class _HistoryPage2State extends State<HistoryPage2> {
             width: width * 0.55,
             height: width * 0.1,
             decoration: BoxDecoration(
-              color: Colors.white,
-              border: Border.all(color: Colors.grey),
+              color: whiteColor,
+              border: Border.all(color: greyColor),
               borderRadius: BorderRadius.circular(width * 0.04),
             ),
             child: Row(
@@ -136,7 +137,7 @@ class _HistoryPage2State extends State<HistoryPage2> {
               children: [
                 Text(
                   "Rate Your Food",
-                  style: TextStyle(color: Colors.black, fontSize: width * 0.025, fontWeight: FontWeight.bold),
+                  style: TextStyle(color: blackColor, fontSize: width * 0.025, fontWeight: FontWeight.bold),
                 ),
                 ...List.generate(5, (index) {
                   return GestureDetector(
@@ -150,8 +151,8 @@ class _HistoryPage2State extends State<HistoryPage2> {
                           ? Icons.star
                           : Icons.star_border,
                       color: index < selectedStar
-                          ? Colors.yellow
-                          : Colors.grey,
+                          ? primaryColor
+                          : greyColor,
                     ),
                   );
                 }),
