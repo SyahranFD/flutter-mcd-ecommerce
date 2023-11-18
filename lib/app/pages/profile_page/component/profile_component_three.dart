@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/login_page/login_page_view.dart';
 
@@ -50,8 +48,6 @@ class ProfilePage3 extends StatelessWidget {
             ),
             TextButton(
               onPressed: () {
-                // Handle logout and navigate to login page
-                // You can clear shared preferences or perform any other logout action here
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => LoginPageView()),

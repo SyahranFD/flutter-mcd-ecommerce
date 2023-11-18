@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/profile_page/editProfile.dart';
+import 'package:flutter_mcd_ecommerce/common/helper/themes.dart';
 
 class HistoryPage1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final Size mediaQuery = MediaQuery.of(context).size;
+    final double width = mediaQuery.width;
+
     return SizedBox(
-      height: 50, 
+      height: 50,
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: whiteColor,
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.2),
+              color: blackColor.withOpacity(0.2),
               blurRadius: 5,
               offset: Offset(0, 2),
             ),
@@ -23,7 +27,7 @@ class HistoryPage1 extends StatelessWidget {
           children: [
             Text(
               "History",
-              style: TextStyle(color: Colors.black, fontSize: 18),
+              style: TextStyle(color: blackColor, fontSize: width * 0.04),
             ),
           ],
         ),

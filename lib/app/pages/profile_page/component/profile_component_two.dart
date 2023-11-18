@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class ProfilePage2 extends StatelessWidget {
   @override
@@ -9,35 +8,38 @@ class ProfilePage2 extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            "First Name",
-            style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold),
-          ),
-          SizedBox(height: 10),
-          FutureBuilder<String>(
-            future: getUserData('name'),
-            builder: (context, snapshot) {
-              if (snapshot.hasData) {
-                return Text(
-                  snapshot.data!,
-                  style: TextStyle(color: Colors.grey),
-                );
-              } else {
-                return CircularProgressIndicator();
-              }
-            },
-          ),
-          SizedBox(height: 4),
-          Divider(color: Colors.grey),
-          // Add other profile information here
+          buildProfileItem("First Name", "John"),
+          buildDivider(),
+          buildProfileItem("Last Name", "Doe"),
+          buildDivider(),
+          buildProfileItem("Phone", "+62123456789"),
+          buildDivider(),
+          buildProfileItem("Email", "JohnDoe@gmail.com"),
+          SizedBox(height: 15),
         ],
       ),
     );
   }
 
-  // Function to get user data from shared preferences
-  Future<String> getUserData(String key) async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    return prefs.getString(key) ?? '';
+  Widget buildProfileItem(String title, String value) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          title,
+          style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold),
+        ),
+        SizedBox(height: 10),
+        Text(
+          value,
+          style: TextStyle(color: Colors.grey),
+        ),
+        SizedBox(height: 4),
+      ],
+    );
+  }
+
+  Widget buildDivider() {
+    return SizedBox(height: 12, child: Divider(color: Colors.grey));
   }
 }
