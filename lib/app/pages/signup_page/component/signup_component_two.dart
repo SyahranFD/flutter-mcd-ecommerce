@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/signup_page/signup_page_view.dart';
 import 'package:flutter_mcd_ecommerce/common/helper/themes.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -23,9 +24,9 @@ class _SignupPage2State extends State<SignupPage2> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        SizedBox(height: 15),
+        SizedBox(height: height * 0.015),
         Container(
-          width: width * 0.8,
+          width: width * 0.7,
           height: height * 0.09,
           child: TextFormField(
             controller: _namaController,
@@ -40,9 +41,9 @@ class _SignupPage2State extends State<SignupPage2> {
             ),
           ),
         ),
-        SizedBox(height: 15),
+        SizedBox(height: height * 0.015),
         Container(
-          width: width * 0.8,
+          width: width * 0.7,
           height: height * 0.09,
           child: TextFormField(
             controller: _emailController,
@@ -57,9 +58,28 @@ class _SignupPage2State extends State<SignupPage2> {
             ),
           ),
         ),
-        SizedBox(height: 15),
+        SizedBox(height: height * 0.015),
         Container(
-          width: width * 0.8,
+          width: width * 0.7,
+          height: height * 0.09,
+          child: TextFormField(
+            inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+            keyboardType: TextInputType.phone,
+            controller: _emailController,
+            decoration: InputDecoration(
+              labelText: 'Phone',
+              focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: primaryColor),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: greyColor),
+              ),
+            ),
+          ),
+        ),
+        SizedBox(height: height * 0.015),
+        Container(
+          width: width * 0.7,
           height: height * 0.09,
           child: TextFormField(
             obscureText: !_isPasswordVisible,
@@ -89,9 +109,9 @@ class _SignupPage2State extends State<SignupPage2> {
     );
   }
 
-  void saveUserData() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setString('name', _namaController.text);
-    prefs.setString('email', _emailController.text);
-  }
+  // void saveUserData() async {
+  //   SharedPreferences prefs = await SharedPreferences.getInstance();
+  //   prefs.setString('name', _namaController.text);
+  //   prefs.setString('email', _emailController.text);
+  // }
 }

@@ -17,7 +17,6 @@ import 'package:flutter_mcd_ecommerce/app/pages/profile_page/profile_page_bindin
 import 'package:flutter_mcd_ecommerce/app/pages/profile_page/profile_page_view.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/signup_page/signup_page_binding.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/signup_page/signup_page_view.dart';
-
 part 'app_routes.dart';
 
 class AppPages {

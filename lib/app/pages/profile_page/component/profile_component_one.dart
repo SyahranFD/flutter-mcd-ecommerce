@@ -4,6 +4,9 @@ import 'package:flutter_mcd_ecommerce/app/pages/profile_page/editProfile.dart';
 class ProfilePage1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final Size mediaQuery = MediaQuery.of(context).size;
+    final double width = mediaQuery.width;
+
     return Container(
       height: 50,
       decoration: BoxDecoration(
@@ -16,7 +19,7 @@ class ProfilePage1 extends StatelessWidget {
           ),
         ],
       ),
-      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      padding: EdgeInsets.symmetric(horizontal: width * 0.04, vertical: 8),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -26,7 +29,6 @@ class ProfilePage1 extends StatelessWidget {
           ),
           GestureDetector(
             onTap: () {
-              // Handle edit click
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => EditProfilePage()),

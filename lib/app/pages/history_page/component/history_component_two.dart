@@ -10,6 +10,9 @@ class _HistoryPage2State extends State<HistoryPage2> {
 
   @override
   Widget build(BuildContext context) {
+    final Size mediaQuery = MediaQuery.of(context).size;
+    final double width = mediaQuery.width;
+
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       padding: EdgeInsets.all(12),
@@ -29,8 +32,8 @@ class _HistoryPage2State extends State<HistoryPage2> {
           Row(
             children: [
               Container(
-                width: 32,
-                height: 32,
+                width: width * 0.1,
+                height: width * 0.1,
                 margin: EdgeInsets.only(right: 12),
                 decoration: BoxDecoration(
                   color: Colors.yellow,
@@ -46,40 +49,40 @@ class _HistoryPage2State extends State<HistoryPage2> {
                     children: [
                       Text(
                         "06 Oct 2023",
-                        style: TextStyle(color: Colors.grey, fontSize: 12),
+                        style: TextStyle(color: Colors.grey, fontSize: width * 0.03),
                       ),
-                      SizedBox(width: 270),
+                      SizedBox(width: width * 0.55),
                       Text(
                         "Completed",
-                        style: TextStyle(color: Colors.green, fontSize: 12),
+                        style: TextStyle(color: Colors.green, fontSize: width * 0.03),
                       ),
                     ],
                   ),
-                  SizedBox(height: 6,),
+                  SizedBox(height: width * 0.01),
                   Text(
                     "Mcdonald’s Kaliurang, Yogyakarta",
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 16,
+                      fontSize: width * 0.04,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 6,),
+                  SizedBox(height: width * 0.01),
                   Text(
                     "1 PaNas Spesial, 2 Chicken Muffin",
-                    style: TextStyle(color: Colors.black, fontSize: 12),
+                    style: TextStyle(color: Colors.black, fontSize: width * 0.03),
                   ),
                 ],
               ),
             ],
           ),
-          SizedBox(height: 12),
+          SizedBox(height: width * 0.02),
           Container(
             width: double.infinity,
             height: 1,
             color: Colors.grey,
           ),
-          SizedBox(height: 12),
+          SizedBox(height: width * 0.02),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -91,21 +94,21 @@ class _HistoryPage2State extends State<HistoryPage2> {
                         "32.000",
                         style: TextStyle(
                           color: Colors.black,
-                          fontSize: 16,
+                          fontSize: width * 0.04,
                         ),
                       ),
-                      SizedBox(width: 4),
+                      SizedBox(width: width * 0.01),
                       Container(
-                        width: 80, 
-                        height: 30,
+                        width: width * 0.2,
+                        height: width * 0.07,
                         decoration: BoxDecoration(
                           color: Colors.red,
-                          borderRadius: BorderRadius.circular(16),
+                          borderRadius: BorderRadius.circular(width * 0.04),
                         ),
                         child: Center(
                           child: Text(
                             "Saved 22K",
-                            style: TextStyle(color: Colors.yellow, fontSize: 11),
+                            style: TextStyle(color: Colors.yellow, fontSize: width * 0.02),
                           ),
                         ),
                       ),
@@ -115,25 +118,25 @@ class _HistoryPage2State extends State<HistoryPage2> {
               ),
               Text(
                 "3 items",
-                style: TextStyle(color: Colors.grey, fontSize: 13),
+                style: TextStyle(color: Colors.grey, fontSize: width * 0.03),
               ),
             ],
           ),
-          SizedBox(height: 8),
+          SizedBox(height: width * 0.01),
           Container(
-            width: 250,
-            height: 45, 
+            width: width * 0.55,
+            height: width * 0.1,
             decoration: BoxDecoration(
               color: Colors.white,
               border: Border.all(color: Colors.grey),
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(width * 0.04),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text(
                   "Rate Your Food",
-                  style: TextStyle(color: Colors.black, fontSize: 12, fontWeight: FontWeight.bold),
+                  style: TextStyle(color: Colors.black, fontSize: width * 0.025, fontWeight: FontWeight.bold),
                 ),
                 ...List.generate(5, (index) {
                   return GestureDetector(

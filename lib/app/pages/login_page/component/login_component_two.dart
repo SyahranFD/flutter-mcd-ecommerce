@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mcd_ecommerce/common/helper/themes.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class loginPage2 extends StatefulWidget {
   @override
@@ -23,7 +22,7 @@ class _loginPage2State extends State<loginPage2> {
       children: [
         SizedBox(height: 15),
         Container(
-          width: width * 0.8,
+          width: width * 0.7,
           height: height * 0.09,
           child: TextFormField(
             controller: _emailController,
@@ -40,7 +39,7 @@ class _loginPage2State extends State<loginPage2> {
         ),
         SizedBox(height: 15),
         Container(
-          width: width * 0.8,
+          width: width * 0.7,
           height: height * 0.09,
           child: TextFormField(
             obscureText: !_isPasswordVisible,
@@ -68,12 +67,5 @@ class _loginPage2State extends State<loginPage2> {
         ),
       ],
     );
-  }
-
-  // Function to save user data using shared preferences after login
-  void saveUserData() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setString('email', _emailController.text);
-    // You can add more data as needed
   }
 }

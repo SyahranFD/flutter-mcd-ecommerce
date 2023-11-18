@@ -4,6 +4,9 @@ import 'package:get/get.dart';
 class loginPage3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final Size mediaQuery = MediaQuery.of(context).size;
+    final double height = mediaQuery.height;
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -14,23 +17,26 @@ class loginPage3 extends StatelessWidget {
           },
           style: ElevatedButton.styleFrom(
             primary: Colors.red,
-            padding: EdgeInsets.symmetric(horizontal: 70, vertical: 15),
+            padding: EdgeInsets.symmetric(
+              horizontal: mediaQuery.width * 0.30, 
+              vertical: height * 0.03,
+            ),
           ),
           child: Text(
             'Login',
             style: TextStyle(fontSize: 18),
           ),
         ),
-        SizedBox(height: 15),
+        SizedBox(height: height * 0.02),
         GestureDetector(
           onTap: () {
             Get.offNamed("signup");
           },
           child: Text(
-            "Don't have an account? Sign In now.",
+            "Don't have an account? Sign Up now.",
             style: TextStyle(
               color: Colors.black,
-              fontSize: 16,
+              fontSize: 15,
             ),
           ),
         ),

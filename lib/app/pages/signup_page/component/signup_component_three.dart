@@ -4,24 +4,30 @@ import 'package:get/get.dart';
 class signupPage3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final Size mediaQuery = MediaQuery.of(context).size;
+    final double height = mediaQuery.height;
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        SizedBox(height: 15),
+        SizedBox(height: height * 0.02),
         ElevatedButton(
           onPressed: () {
             Get.offNamed("/");
           },
           style: ElevatedButton.styleFrom(
             primary: Colors.red,
-            padding: EdgeInsets.symmetric(horizontal: 70, vertical: 15),
+            padding: EdgeInsets.symmetric(
+              horizontal: mediaQuery.width * 0.30, 
+              vertical: height * 0.03,
+            ),
           ),
           child: Text(
             'SignUp',
             style: TextStyle(fontSize: 18),
           ),
         ),
-        SizedBox(height: 15),
+        SizedBox(height: height * 0.02),
         GestureDetector(
           onTap: () {
             Get.offNamed("login");
@@ -30,7 +36,7 @@ class signupPage3 extends StatelessWidget {
             "Already have an account? Sign In now.",
             style: TextStyle(
               color: Colors.black,
-              fontSize: 16,
+              fontSize: 15,
             ),
           ),
         ),
