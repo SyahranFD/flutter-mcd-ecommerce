@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mcd_ecommerce/common/helper/themes.dart';
 import 'package:get/get.dart';
 
 class loginPage3 extends StatelessWidget {
@@ -16,7 +17,7 @@ class loginPage3 extends StatelessWidget {
             Get.offNamed("/");
           },
           style: ElevatedButton.styleFrom(
-            primary: Colors.red,
+            primary: secondaryColor,
             padding: EdgeInsets.symmetric(
               horizontal: mediaQuery.width * 0.30, 
               vertical: height * 0.03,
@@ -35,7 +36,7 @@ class loginPage3 extends StatelessWidget {
           child: Text(
             "Don't have an account? Sign Up now.",
             style: TextStyle(
-              color: Colors.black,
+              color: blackColor,
               fontSize: 15,
             ),
           ),

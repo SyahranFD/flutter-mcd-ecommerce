@@ -1,28 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/login_page/login_page_view.dart';
+import 'package:flutter_mcd_ecommerce/common/helper/themes.dart';
 
 class ProfilePage3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final Size mediaQuery = MediaQuery.of(context).size;
+    final double width = mediaQuery.width;
+
     return Container(
       padding: EdgeInsets.all(16),
+      width: width,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Text(
             "Kebijakan Privasi",
-            style: TextStyle(color: Colors.black),
+            style: TextStyle(color: blackColor),
           ),
           SizedBox(height: 16),
-          // Add confirmation dialog for logout
           GestureDetector(
             onTap: () {
-              // Show logout confirmation dialog
               showLogoutDialog(context);
             },
             child: Text(
               "Keluar",
-              style: TextStyle(color: Colors.red),
+              style: TextStyle(color: secondaryColor),
             ),
           ),
         ],
@@ -30,7 +34,6 @@ class ProfilePage3 extends StatelessWidget {
     );
   }
 
-  // Function to show the logout confirmation dialog
   void showLogoutDialog(BuildContext context) {
     showDialog(
       context: context,
@@ -41,7 +44,6 @@ class ProfilePage3 extends StatelessWidget {
           actions: [
             TextButton(
               onPressed: () {
-                // Close the dialog
                 Navigator.of(context).pop();
               },
               child: Text("Tidak"),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mcd_ecommerce/common/helper/themes.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class loginPage1 extends StatelessWidget {
@@ -11,13 +12,15 @@ class loginPage1 extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SvgPicture.asset('assets/images/login_image.svg', height: height * 0.3),
-          SizedBox(height: 2),
+          Container(
+            height: height * 0.3, 
+            child: SvgPicture.asset('assets/images/login_image.svg'),
+          ),
           Text(
-            'Welcome Back!',
+            'Welcome back!',
             style: TextStyle(
-              color: Colors.black,
-              fontSize: height * 0.03,
+              color: blackColor,
+              fontSize: 20,
             ),
           ),
         ],

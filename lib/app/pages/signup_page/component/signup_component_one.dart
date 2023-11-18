@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mcd_ecommerce/common/helper/themes.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class signupPage1 extends StatelessWidget {
@@ -18,7 +19,7 @@ class signupPage1 extends StatelessWidget {
           Text(
             'Become a member!',
             style: TextStyle(
-              color: Colors.black,
+              color: blackColor,
               fontSize: 20,
             ),
           ),

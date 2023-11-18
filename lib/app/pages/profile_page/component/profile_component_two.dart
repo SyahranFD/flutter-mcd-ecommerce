@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mcd_ecommerce/common/helper/themes.dart';
 
 class ProfilePage2 extends StatelessWidget {
   @override
@@ -27,19 +28,19 @@ class ProfilePage2 extends StatelessWidget {
       children: [
         Text(
           title,
-          style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold),
+          style: TextStyle(color: greyColor, fontWeight: FontWeight.bold),
         ),
         SizedBox(height: 10),
         Text(
           value,
-          style: TextStyle(color: Colors.grey),
+          style: TextStyle(color: greyColor),
         ),
-        SizedBox(height: 4),
+        SizedBox(height: 5),
       ],
     );
   }
 
   Widget buildDivider() {
-    return SizedBox(height: 12, child: Divider(color: Colors.grey));
+    return SizedBox(height: 15, child: Divider(color: greyColor));
   }
 }

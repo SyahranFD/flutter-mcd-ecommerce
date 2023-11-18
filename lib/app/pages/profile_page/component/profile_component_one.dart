@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/profile_page/editProfile.dart';
+import 'package:flutter_mcd_ecommerce/common/helper/themes.dart';
 
 class ProfilePage1 extends StatelessWidget {
   @override
@@ -8,24 +9,24 @@ class ProfilePage1 extends StatelessWidget {
     final double width = mediaQuery.width;
 
     return Container(
-      height: 50,
+      height: mediaQuery.height * 0.1,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: whiteColor,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.2),
+            color: blackColor.withOpacity(0.2),
             blurRadius: 5,
             offset: Offset(0, 2),
           ),
         ],
       ),
-      padding: EdgeInsets.symmetric(horizontal: width * 0.04, vertical: 8),
+      padding: EdgeInsets.symmetric(horizontal: width * 0.04, vertical: mediaQuery.height * 0.02),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             "Account",
-            style: TextStyle(color: Colors.black, fontSize: 18),
+            style: TextStyle(color: blackColor, fontSize: 18),
           ),
           GestureDetector(
             onTap: () {
@@ -36,7 +37,7 @@ class ProfilePage1 extends StatelessWidget {
             },
             child: Text(
               "Edit",
-              style: TextStyle(color: Colors.yellow, fontSize: 18),
+              style: TextStyle(color: primaryColor, fontSize: 18),
             ),
           ),
         ],
