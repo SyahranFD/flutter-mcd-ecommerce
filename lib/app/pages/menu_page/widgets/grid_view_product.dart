@@ -56,7 +56,7 @@ Widget gridViewProduct({required context, required controller}) {
                 children: [
                   Column(
                     children: [
-                      Image.asset(product.image, fit: BoxFit.fitHeight),
+                      Image.network(product.image, fit: BoxFit.fitHeight),
                       SizedBox(height: height * 0.01),
                       Container(
                         padding: EdgeInsets.symmetric(horizontal: width * 0.015),

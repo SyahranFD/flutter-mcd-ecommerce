@@ -37,7 +37,7 @@ class CartComponentTwo extends StatelessWidget {
                     children: [
                       Container(
                         width: width * 0.25,
-                        child: Image.asset(product.image, fit: BoxFit.fitWidth),
+                        child: Image.network(product.image, fit: BoxFit.fitWidth),
                       ),
                       SizedBox(width: width * 0.025),
                       Container(

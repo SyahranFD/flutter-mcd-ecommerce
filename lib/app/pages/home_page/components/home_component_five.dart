@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mcd_ecommerce/app/mock_data/controller/all_menu_firebase.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/home_page/home_page_controller.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/menu_page/menu_page_controller.dart';
 import 'package:flutter_mcd_ecommerce/common/helper/themes.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_mcd_ecommerce/app/mock_data/controller/breakfast.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/home_page/widgets/card_product_home_page.dart';
 
 class HomeComponentFive extends StatelessWidget {
-  final BreakfastController breakfastController = Get.put(BreakfastController());
+  final AllMenuFirebaseController allMenuFirebaseController = Get.put(AllMenuFirebaseController());
   final MenuPageController menuPageController = Get.put(MenuPageController());
   final HomePageController homePageController = Get.put(HomePageController());
 
@@ -65,7 +65,7 @@ class HomeComponentFive extends StatelessWidget {
                   height: height * 0.3,
                 ),
             ),
-            cardProductHomePage(context: context, controller: breakfastController.breakfast),
+            cardProductHomePage(context: context, dataList: allMenuFirebaseController.breakfastFirebase)
           ],
         ),
       ],
