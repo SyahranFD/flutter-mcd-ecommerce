@@ -20,7 +20,7 @@ class loginPage3 extends StatelessWidget {
             primary: secondaryColor,
             padding: EdgeInsets.symmetric(
               horizontal: mediaQuery.width * 0.30, 
-              vertical: height * 0.03,
+              vertical: height * 0.02,
             ),
           ),
           child: Text(

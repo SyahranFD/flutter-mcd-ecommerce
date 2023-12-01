@@ -2,6 +2,8 @@ import 'package:flutter_mcd_ecommerce/app/pages/payment_page/payment_page_bindin
 import 'package:flutter_mcd_ecommerce/app/pages/payment_page/payment_page_view.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/payment_succesful_page/payment_succesful_page_binding.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/payment_succesful_page/payment_succesful_page_view.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/splash_screen/splash_screen_binding.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/splash_screen/splash_screen_view.dart';
 import 'package:get/get.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/cart_page/cart_page_binding.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/cart_page/cart_page_view.dart';
@@ -23,9 +25,16 @@ class AppPages {
   // static var routes;
 
   AppPages._();
-  static const INITIAL = Routes.HOME_PAGE;
+  static const INITIAL = Routes.SPLASH_SCREEN;
+
 
   static final routes = [
+    GetPage(
+      name: _Paths.SPLASH_SCREEN,
+      page: () => SplashScreenView(),
+      binding: SplashScreenBinding(),
+      transition: Transition.noTransition,
+    ),
     GetPage(
       name: _Paths.HOME_PAGE,
       page: () => HomePageView(),

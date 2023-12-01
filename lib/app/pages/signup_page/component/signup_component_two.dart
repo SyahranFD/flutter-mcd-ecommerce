@@ -13,6 +13,7 @@ class _SignupPage2State extends State<SignupPage2> {
   bool _isPasswordVisible = false;
   TextEditingController _namaController = TextEditingController();
   TextEditingController _emailController = TextEditingController();
+  TextEditingController _phoneController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
 
   @override
@@ -65,7 +66,7 @@ class _SignupPage2State extends State<SignupPage2> {
           child: TextFormField(
             inputFormatters: [FilteringTextInputFormatter.digitsOnly],
             keyboardType: TextInputType.phone,
-            controller: _emailController,
+            controller: _phoneController, // Menggunakan _phoneController
             decoration: InputDecoration(
               labelText: 'Phone',
               focusedBorder: OutlineInputBorder(
@@ -108,10 +109,4 @@ class _SignupPage2State extends State<SignupPage2> {
       ],
     );
   }
-
-  // void saveUserData() async {
-  //   SharedPreferences prefs = await SharedPreferences.getInstance();
-  //   prefs.setString('name', _namaController.text);
-  //   prefs.setString('email', _emailController.text);
-  // }
 }
