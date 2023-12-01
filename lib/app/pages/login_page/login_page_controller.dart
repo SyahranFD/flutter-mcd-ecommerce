@@ -1,20 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/home_page/home_page_view.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPageController extends GetxController {
-  // Menambahkan formKey
-  final formKey = GlobalKey<FormState>();
 
-  final RxString email = ''.obs;
-  final RxString password = ''.obs;
+  late final SharedPreferences prefs;
+  RxBool isSuccess = false.obs;
 
-  void setEmail(String value) => email.value = value;
-  void setPassword(String value) => password.value = value;
+  @override
+  void onInit() {
+    // TODO: implement onInit
+    super.onInit();
+  }
 
-  void handleLogin() {
-    if (formKey.currentState?.validate() ?? false) {
-      // Logika untuk memeriksa email dan password, kemudian melakukan login
-      print('Email: ${email.value}, Password: ${password.value}');
+  loginAction(String username, password) async {
+    prefs = await SharedPreferences.getInstance();
+    if (username == "admin" && password == "admin") {
+      await prefs.setString('username', username);
+      Get.off(HomePageView());
+      isSuccess.value = true;
     }
   }
 }

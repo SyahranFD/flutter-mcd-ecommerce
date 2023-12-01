@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/profile_page/profile_page_view.dart';
 import 'package:flutter_mcd_ecommerce/common/helper/themes.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class loginPage2 extends StatefulWidget {
   @override
@@ -65,6 +67,7 @@ class _loginPage2State extends State<loginPage2> {
             ),
           ),
         ),
+        SizedBox(height: 15),
       ],
     );
   }
