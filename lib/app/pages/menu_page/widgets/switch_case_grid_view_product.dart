@@ -1,36 +1,26 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_mcd_ecommerce/app/mock_data/controller/all_menu.dart';
-import 'package:flutter_mcd_ecommerce/app/mock_data/controller/breakfast.dart';
-import 'package:flutter_mcd_ecommerce/app/mock_data/controller/burger.dart';
-import 'package:flutter_mcd_ecommerce/app/mock_data/controller/chicken.dart';
-import 'package:flutter_mcd_ecommerce/app/mock_data/controller/dessert.dart';
-import 'package:flutter_mcd_ecommerce/app/mock_data/controller/drink.dart';
+import 'package:flutter_mcd_ecommerce/app/mock_data/controller/all_menu_firebase.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/menu_page/menu_page_controller.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/menu_page/widgets/grid_view_product.dart';
 import 'package:get/get.dart';
 
 final MenuPageController menuPageController = Get.put(MenuPageController());
-final AllMenuController allMenuController = Get.put(AllMenuController());
-final BurgerController burgerController = Get.put(BurgerController());
-final ChickenController chickenController = Get.put(ChickenController());
-final DrinkController drinkController = Get.put(DrinkController());
-final DessertController dessertController = Get.put(DessertController());
-final BreakfastController breakfastController = Get.put(BreakfastController());
+final AllMenuFirebaseController allMenuFirebaseController = Get.put(AllMenuFirebaseController());
 
 Widget switchCaseGridViewProduct({required context}) {
   switch (menuPageController.selectedCategoryIndex.value) {
     case 0:
-      return gridViewProduct(context: context, controller: allMenuController.allMenu);
+      return gridViewProduct(context: context, controller: allMenuFirebaseController.allMenuFirebase);
     case 1:
-      return gridViewProduct(context: context, controller: burgerController.burger);
+      return gridViewProduct(context: context, controller: allMenuFirebaseController.burgerFirebase);
     case 2:
-      return gridViewProduct(context: context, controller: chickenController.chicken);
+      return gridViewProduct(context: context, controller: allMenuFirebaseController.chickenFirebase);
     case 3:
-      return gridViewProduct(context: context, controller: drinkController.drink);
+      return gridViewProduct(context: context, controller: allMenuFirebaseController.drinkFirebase);
     case 4:
-      return gridViewProduct(context: context, controller: dessertController.dessert);
+      return gridViewProduct(context: context, controller: allMenuFirebaseController.dessertFirebase);
     case 5:
-      return gridViewProduct(context: context, controller: breakfastController.breakfast);
+      return gridViewProduct(context: context, controller: allMenuFirebaseController.breakfastFirebase);
     default:
       throw UnimplementedError("Unhandled category index: " + menuPageController.selectedCategoryIndex.value.toString());
   }

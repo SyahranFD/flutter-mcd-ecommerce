@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "890700743146",
+    "project_id": "flutter-mcd-firestore",
+    "storage_bucket": "flutter-mcd-firestore.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:890700743146:android:3875989d33b3a58e117293",
+        "android_client_info": {
+          "package_name": "com.example.flutter_mcd_ecommerce"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDaMTZfByCsMeIExuhpnvmMeGtQ-XTAde0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

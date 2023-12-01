@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mcd_ecommerce/app/mock_data/controller/all_menu_firebase.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/home_page/home_page_controller.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/menu_page/menu_page_controller.dart';
 import 'package:get/get.dart';
-import 'package:flutter_mcd_ecommerce/app/mock_data/controller/recommended.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/home_page/widgets/card_product_home_page.dart';
 import 'package:flutter_mcd_ecommerce/common/helper/themes.dart';
 
 class HomeComponentFour extends StatelessWidget {
-  final RecommendedController recommendedController = Get.put(RecommendedController());
+  final AllMenuFirebaseController allMenuFirebaseController = Get.put(AllMenuFirebaseController());
   final MenuPageController menuPageController = Get.put(MenuPageController());
   final HomePageController homePageController = Get.put(HomePageController());
   @override
@@ -44,7 +44,7 @@ class HomeComponentFour extends StatelessWidget {
 
         SizedBox(height: height * 0.025),
 
-        cardProductHomePage(context: context, controller: recommendedController.recommended),
+        cardProductHomePage(context: context, dataList: allMenuFirebaseController.burgerFirebase)
       ],
     );
   }
