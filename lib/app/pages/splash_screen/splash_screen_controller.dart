@@ -17,9 +17,9 @@ class SplashScreenController extends GetxController {
     prefs = await SharedPreferences.getInstance();
     Future.delayed(Duration(seconds: 2), () async {
       if (prefs.getString('username') == null) {
-        Get.off(LoginPageView());
+        Get.offNamed('login');
       } else {
-        Get.off(SplashScreenView());
+        Get.offNamed('/');
       }
     });
   }

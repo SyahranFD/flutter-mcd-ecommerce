@@ -20,8 +20,7 @@ class HomePageController extends GetxController {
   }
 
   void logoutAction() async{
-    prefs = await SharedPreferences.getInstance();
-    await prefs.remove('counter');
-    Get.off(LoginPageView());
+    await prefs.remove('username');
+    Get.offNamed('login');
   }  
 }

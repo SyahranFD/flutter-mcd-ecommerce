@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_mcd_ecommerce/app/pages/home_page/home_page_view.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -14,11 +12,11 @@ class LoginPageController extends GetxController {
     super.onInit();
   }
 
-  loginAction(String username, password) async {
+  loginAction(String username, String password) async {
     prefs = await SharedPreferences.getInstance();
     if (username == "admin" && password == "admin") {
       await prefs.setString('username', username);
-      Get.off(HomePageView());
+      Get.offNamed('/');
       isSuccess.value = true;
     }
   }
