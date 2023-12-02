@@ -18,7 +18,7 @@ class LoginPageView extends StatelessWidget {
             children: [
               loginPage1(),
               loginPage2(),
-              loginPage3(),
+              // loginPage3(),
             ],
           ),
         ),

@@ -16,8 +16,9 @@ class SplashScreenView extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Container(
-          color: Colors.indigo,
-          child: Text('Ini halaman splash screen'),
+          child: Image.asset('assets/images/logo_mcd.png'), 
+          width: 100,
+          height: 100,
         ),
       ),
     );
