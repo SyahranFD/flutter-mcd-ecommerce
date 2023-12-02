@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/home_page/home_page_controller.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/login_page/login_page_view.dart';
 import 'package:flutter_mcd_ecommerce/common/helper/themes.dart';
+import 'package:get/get.dart';
 
 class ProfilePage3 extends StatelessWidget {
+  final HomePageController homePageController = Get.put(HomePageController());
+
   @override
   Widget build(BuildContext context) {
     final Size mediaQuery = MediaQuery.of(context).size;
@@ -50,10 +54,7 @@ class ProfilePage3 extends StatelessWidget {
             ),
             TextButton(
               onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => LoginPageView()),
-                );
+                homePageController.logoutAction();
               },
               child: Text("Iya"),
             ),
